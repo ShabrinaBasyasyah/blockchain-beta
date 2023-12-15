@@ -3,72 +3,196 @@ import json
 from datetime import datetime
 
 class Permintaan:
-    def __init__(self, id, id_pelaku_usaha, tanggal_permintaan, ptbae_diminta, satuan, harga, **kwargs):
+    def __init__(
+        self,
+        id,
+        id_pelaku_usaha,
+        id_periode,
+        tanggal_permintaan,
+        tanggal_awal_berlaku,
+        tanggal_akhir_berlaku,
+        ptbae_diminta,
+        satuan,
+        harga,
+        mata_uang,
+        jumlah_terbeli,
+        satuan_terbeli,
+        sisa_permintaan,
+        satuan_sisa_permintaan,
+        tanggal_terbeli,
+        created_by,
+        created_at,
+        last_modified_by,
+        last_modified_at,
+        is_deleted,
+        status,
+        available_permintaan,
+        is_spe,
+        is_direct_offset,
+    ):
+        # Initialize the attributes of the request
         self.id = id
         self.id_pelaku_usaha = id_pelaku_usaha
+        self.id_periode = id_periode
         self.tanggal_permintaan = tanggal_permintaan
+        self.tanggal_awal_berlaku = tanggal_awal_berlaku
+        self.tanggal_akhir_berlaku = tanggal_akhir_berlaku
         self.ptbae_diminta = ptbae_diminta
         self.satuan = satuan
         self.harga = harga
-        self.additional_data = kwargs
+        self.mata_uang = mata_uang
+        self.jumlah_terbeli = jumlah_terbeli
+        self.satuan_terbeli = satuan_terbeli
+        self.sisa_permintaan = sisa_permintaan
+        self.satuan_sisa_permintaan = satuan_sisa_permintaan
+        self.tanggal_terbeli = tanggal_terbeli
+        self.created_by = created_by
+        self.created_at = created_at
+        self.last_modified_by = last_modified_by
+        self.last_modified_at = last_modified_at
+        self.is_deleted = is_deleted
+        self.status = status
+        self.available_permintaan = available_permintaan
+        self.is_spe = is_spe
+        self.is_direct_offset = is_direct_offset
 
     def to_dict(self):
-        return {
-            "id": self.id,
-            "id_pelaku_usaha": self.id_pelaku_usaha,
-            "tanggal_permintaan": self.tanggal_permintaan,
-            "ptbae_diminta": self.ptbae_diminta,
-            "satuan": self.satuan,
-            "harga": self.harga,
-            **self.additional_data
-        }
+        return vars(self)
 
 class Penawaran:
-    def __init__(self, id, id_pelaku_usaha, tanggal_penawaran, ptbae_ditawarkan, satuan, harga, **kwargs):
+    def __init__(
+        self,
+        id,
+        id_pelaku_usaha,
+        id_periode,
+        tanggal_penawaran,
+        tanggal_awal_berlaku,
+        tanggal_akhir_berlaku,
+        ptbae_ditawarkan,
+        satuan,
+        harga,
+        mata_uang,
+        jumlah_terjual,
+        satuan_terjual,
+        sisa_penawaran,
+        satuan_sisa_penawaran,
+        tanggal_terjual,
+        created_by,
+        created_at,
+        last_modified_by,
+        last_modified_at,
+        is_deleted,
+        status,
+        available_penawaran,
+        is_spe,
+    ):
+        # Initialize the attributes of the offer
         self.id = id
         self.id_pelaku_usaha = id_pelaku_usaha
+        self.id_periode = id_periode
         self.tanggal_penawaran = tanggal_penawaran
+        self.tanggal_awal_berlaku = tanggal_awal_berlaku
+        self.tanggal_akhir_berlaku = tanggal_akhir_berlaku
         self.ptbae_ditawarkan = ptbae_ditawarkan
         self.satuan = satuan
         self.harga = harga
-        self.additional_data = kwargs
+        self.mata_uang = mata_uang
+        self.jumlah_terjual = jumlah_terjual
+        self.satuan_terjual = satuan_terjual
+        self.sisa_penawaran = sisa_penawaran
+        self.satuan_sisa_penawaran = satuan_sisa_penawaran
+        self.tanggal_terjual = tanggal_terjual
+        self.created_by = created_by
+        self.created_at = created_at
+        self.last_modified_by = last_modified_by
+        self.last_modified_at = last_modified_at
+        self.is_deleted = is_deleted
+        self.status = status
+        self.available_penawaran = available_penawaran
+        self.is_spe = is_spe
 
     def to_dict(self):
-        return {
-            "id": self.id,
-            "id_pelaku_usaha": self.id_pelaku_usaha,
-            "tanggal_penawaran": self.tanggal_penawaran,
-            "ptbae_ditawarkan": self.ptbae_ditawarkan,
-            "satuan": self.satuan,
-            "harga": self.harga,
-            **self.additional_data
-        }
+        return vars(self)
 
 class Transaksi:
-    def __init__(self, id, id_periode, kode_transaksi, tanggal_transaksi, jumlah_karbon_masuk, satuan_karbon_masuk,
-                 harga_beli, nilai_beli_karbon, **kwargs):
+    def __init__(
+        self,
+        id,
+        id_periode,
+        kode_transaksi,
+        tanggal_transaksi,
+        id_pelaku_usaha,
+        beli_dari_pelaku_usaha,
+        jumlah_karbon_masuk,
+        satuan_karbon_masuk,
+        harga_beli,
+        nilai_beli_karbon,
+        satuan_harga,
+        jual_ke,
+        jumlah_karbon_keluar,
+        satuan_karbon_keluar,
+        harga_jual,
+        satuan_harga_jual,
+        nilai_jual_karbon,
+        token,
+        saldo_emisi,
+        satuan_saldo,
+        saldo_nilai_ekonomi,
+        satuan_mata_uang,
+        token_expired,
+        approval_status,
+        approved_by,
+        approved_at,
+        created_by,
+        created_at,
+        modified_by,
+        is_deleted,
+        file,
+        id_penawaran,
+        id_permintaan,
+        id_transaksi_origin,
+        is_spe,
+        is_direct_offset,
+    ):
         self.id = id
         self.id_periode = id_periode
         self.kode_transaksi = kode_transaksi
         self.tanggal_transaksi = tanggal_transaksi
+        self.id_pelaku_usaha = id_pelaku_usaha
+        self.beli_dari_pelaku_usaha = beli_dari_pelaku_usaha
         self.jumlah_karbon_masuk = jumlah_karbon_masuk
         self.satuan_karbon_masuk = satuan_karbon_masuk
         self.harga_beli = harga_beli
         self.nilai_beli_karbon = nilai_beli_karbon
-        self.additional_data = kwargs
+        self.satuan_harga = satuan_harga
+        self.jual_ke = jual_ke
+        self.jumlah_karbon_keluar = jumlah_karbon_keluar
+        self.satuan_karbon_keluar = satuan_karbon_keluar
+        self.harga_jual = harga_jual
+        self.satuan_harga_jual = satuan_harga_jual
+        self.nilai_jual_karbon = nilai_jual_karbon
+        self.token = token
+        self.saldo_emisi = saldo_emisi
+        self.satuan_saldo = satuan_saldo
+        self.saldo_nilai_ekonomi = saldo_nilai_ekonomi
+        self.satuan_mata_uang = satuan_mata_uang
+        self.token_expired = token_expired
+        self.approval_status = approval_status
+        self.approved_by = approved_by
+        self.approved_at = approved_at
+        self.created_by = created_by
+        self.created_at = created_at
+        self.modified_by = modified_by
+        self.is_deleted = is_deleted
+        self.file = file
+        self.id_penawaran = id_penawaran
+        self.id_permintaan = id_permintaan
+        self.id_transaksi_origin = id_transaksi_origin
+        self.is_spe = is_spe
+        self.is_direct_offset = is_direct_offset
 
     def to_dict(self):
-        return {
-            "id": self.id,
-            "id_periode": self.id_periode,
-            "kode_transaksi": self.kode_transaksi,
-            "tanggal_transaksi": self.tanggal_transaksi,
-            "jumlah_karbon_masuk": self.jumlah_karbon_masuk,
-            "satuan_karbon_masuk": self.satuan_karbon_masuk,
-            "harga_beli": self.harga_beli,
-            "nilai_beli_karbon": self.nilai_beli_karbon,
-            **self.additional_data
-        }
+        return vars(self)
 
 class Block:
     def __init__(self, timestamp, data, previous_hash):
@@ -155,77 +279,234 @@ def main():
     # Membuat objek blockchain
     blockchain = Blockchain()
 
-    # Meminta pengguna untuk memasukkan data permintaan
-    print("Masukkan data permintaan:")
-    id_permintaan = int(input("ID Permintaan: "))
-    id_pelaku_usaha = int(input("ID Pelaku Usaha: "))
-    tanggal_permintaan = input("Tanggal Permintaan: ")
-    ptbae_diminta = float(input("PTBAE Diminta: "))
-    satuan_permintaan = input("Satuan Permintaan: ")
-    harga_permintaan = float(input("Harga Permintaan: "))
+    while True:
+        # Menampilkan menu aktivitas
+        print("\nPilih jenis aktivitas:")
+        print("1. Permintaan")
+        print("2. Penawaran")
+        print("3. Transaksi")
+        print("4. Lihat Blockchain")
+        print("5. Keluar")
 
-    # Membuat objek Permintaan berdasarkan input pengguna
-    permintaan = Permintaan(
-        id=id_permintaan,
-        id_pelaku_usaha=id_pelaku_usaha,
-        tanggal_permintaan=tanggal_permintaan,
-        ptbae_diminta=ptbae_diminta,
-        satuan=satuan_permintaan,
-        harga=harga_permintaan
-    )
+        # Meminta pengguna untuk memilih jenis aktivitas
+        choice = input("Masukkan nomor aktivitas (1-4): ")
 
-    # Menambahkan blok baru dengan data permintaan
-    blockchain.add_block(permintaan)
+        if choice == "1":
+            # Meminta pengguna untuk memasukkan data permintaan
+            print("\nMasukkan data permintaan:")
+            id_permintaan = int(input("ID Permintaan: "))
+            id_pelaku_usaha = int(input("ID Pelaku Usaha: "))
+            id_periode = int(input("ID Periode: "))
+            tanggal_permintaan = input("Tanggal Permintaan: ")
+            tanggal_awal_berlaku = input("Tanggal Awal Berlaku: ")
+            tanggal_akhir_berlaku = input("Tanggal Akhir Berlaku: ")
+            ptbae_diminta = float(input("PTBAE Diminta: "))
+            satuan_permintaan = input("Satuan Permintaan: ")
+            harga_permintaan = float(input("Harga Permintaan: "))
+            # Additional fields
+            mata_uang = input("Mata Uang: ")
+            jumlah_terbeli = float(input("Jumlah Terbeli: "))
+            satuan_terbeli = input("Satuan Terbeli: ")
+            sisa_permintaan = float(input("Sisa Permintaan: "))
+            satuan_sisa_permintaan = input("Satuan Sisa Permintaan: ")
+            tanggal_terbeli = input("Tanggal Terbeli: ")
+            created_by = input("Created By: ")
+            created_at = input("Created At: ")
+            last_modified_by = input("Last Modified By: ")
+            last_modified_at = input("Last Modified At: ")
+            is_deleted = input("Is Deleted: ")
+            status = input("Status: ")
+            available_permintaan = float(input("Available Permintaan: "))
+            is_spe = input("Is SPE: ")
+            is_direct_offset = input("Is Direct Offset: ")
+            
 
-    # Meminta pengguna untuk memasukkan data penawaran
-    print("\nMasukkan data penawaran:")
-    id_penawaran = int(input("ID Penawaran: "))
-    id_pelaku_usaha_penawaran = int(input("ID Pelaku Usaha Penawaran: "))
-    tanggal_penawaran = input("Tanggal Penawaran: ")
-    ptbae_ditawarkan = float(input("PTBAE Ditawarkan: "))
-    satuan_penawaran = input("Satuan Penawaran: ")
-    harga_penawaran = float(input("Harga Penawaran: "))
+            # Membuat objek Permintaan berdasarkan input pengguna
+            permintaan = Permintaan(
+                id=id_permintaan,
+                id_pelaku_usaha=id_pelaku_usaha,
+                id_periode=id_periode,
+                tanggal_permintaan=tanggal_permintaan,
+                tanggal_awal_berlaku=tanggal_awal_berlaku,
+                tanggal_akhir_berlaku=tanggal_akhir_berlaku,
+                ptbae_diminta=ptbae_diminta,
+                satuan=satuan_permintaan,
+                harga=harga_permintaan,
+                mata_uang=mata_uang,
+                jumlah_terbeli=jumlah_terbeli,
+                satuan_terbeli=satuan_terbeli,
+                sisa_permintaan=sisa_permintaan,
+                satuan_sisa_permintaan=satuan_sisa_permintaan,
+                tanggal_terbeli=tanggal_terbeli,
+                created_by=created_by,
+                created_at=created_at,
+                last_modified_by=last_modified_by,
+                last_modified_at=last_modified_at,
+                is_deleted=is_deleted,
+                status=status,
+                available_permintaan=available_permintaan,
+                is_spe=is_spe,
+                is_direct_offset=is_direct_offset,
+            )
+            
+            # Menambahkan blok baru dengan data permintaan
+            blockchain.add_block(permintaan)
 
-    # Membuat objek Penawaran berdasarkan input pengguna
-    penawaran = Penawaran(
-        id=id_penawaran,
-        id_pelaku_usaha=id_pelaku_usaha_penawaran,
-        tanggal_penawaran=tanggal_penawaran,
-        ptbae_ditawarkan=ptbae_ditawarkan,
-        satuan=satuan_penawaran,
-        harga=harga_penawaran
-    )
+        elif choice == "2":
+            # Meminta pengguna untuk memasukkan data penawaran
+            print("\nMasukkan data penawaran:")
+            id_penawaran = int(input("ID Penawaran: "))
+            id_pelaku_usaha = int(input("ID Pelaku Usaha: "))
+            id_periode = int(input("ID Periode: "))
+            tanggal_penawaran = input("Tanggal Penawaran: ")
+            tanggal_awal_berlaku = input("Tanggal Awal Berlaku: ")
+            tanggal_akhir_berlaku = input("Tanggal Akhir Berlaku: ")
+            ptbae_ditawarkan = float(input("PTBAE Ditawarkan: "))
+            satuan = input("Satuan: ")
+            harga = float(input("Harga: "))
+            mata_uang = input("Mata Uang: ")
+            jumlah_terjual = float(input("Jumlah Terjual: "))
+            satuan_terjual = input("Satuan Terjual: ")
+            sisa_penawaran = float(input("Sisa Penawaran: "))
+            satuan_sisa_penawaran = input("Satuan Sisa Penawaran: ")
+            tanggal_terjual = input("Tanggal Terjual: ")
+            created_by = input("Created By: ")
+            created_at = input("Created At: ")
+            last_modified_by = input("Last Modified By: ")
+            last_modified_at = input("Last Modified At: ")
+            is_deleted = input("Is Deleted: ")
+            status = input("Status: ")
+            available_penawaran = float(input("Available Penawaran: "))
+            is_spe = input("Is SPE: ")
 
-    # Menambahkan blok baru dengan data penawaran
-    blockchain.add_block(penawaran)
+            # Membuat objek Penawaran berdasarkan input pengguna
+            penawaran = Penawaran(
+                id=id_penawaran,
+                id_pelaku_usaha=id_pelaku_usaha,
+                id_periode=id_periode,
+                tanggal_penawaran=tanggal_penawaran,
+                tanggal_awal_berlaku=tanggal_awal_berlaku,
+                tanggal_akhir_berlaku=tanggal_akhir_berlaku,
+                ptbae_ditawarkan=ptbae_ditawarkan,
+                satuan=satuan,
+                harga=harga,
+                mata_uang=mata_uang,
+                jumlah_terjual=jumlah_terjual,
+                satuan_terjual=satuan_terjual,
+                sisa_penawaran=sisa_penawaran,
+                satuan_sisa_penawaran=satuan_sisa_penawaran,
+                tanggal_terjual=tanggal_terjual,
+                created_by=created_by,
+                created_at=created_at,
+                last_modified_by=last_modified_by,
+                last_modified_at=last_modified_at,
+                is_deleted=is_deleted,
+                status=status,
+                available_penawaran=available_penawaran,
+                is_spe=is_spe,
+            )
 
-    # Meminta pengguna untuk memasukkan data transaksi
-    print("\nMasukkan data transaksi:")
-    id_transaksi = int(input("ID Transaksi: "))
-    id_periode = int(input("ID Periode: "))
-    kode_transaksi = input("Kode Transaksi: ")
-    tanggal_transaksi = input("Tanggal Transaksi: ")
-    jumlah_karbon_masuk = float(input("Jumlah Karbon Masuk: "))
-    satuan_karbon_masuk = input("Satuan Karbon Masuk: ")
-    harga_beli = float(input("Harga Beli: "))
-    nilai_beli_karbon = float(input("Nilai Beli Karbon: "))
+            # Menambahkan blok baru dengan data penawaran
+            blockchain.add_block(penawaran)
 
-    # Membuat objek Transaksi berdasarkan input pengguna
-    transaksi = Transaksi(
-        id=id_transaksi,
-        id_periode=id_periode,
-        kode_transaksi=kode_transaksi,
-        tanggal_transaksi=tanggal_transaksi,
-        jumlah_karbon_masuk=jumlah_karbon_masuk,
-        satuan_karbon_masuk=satuan_karbon_masuk,
-        harga_beli=harga_beli,
-        nilai_beli_karbon=nilai_beli_karbon
-    )
+        elif choice == "3":
+            # Meminta pengguna untuk memasukkan data transaksi
+            print("\nMasukkan data transaksi:")
+            id_transaksi = int(input("ID Transaksi: "))
+            id_periode = int(input("ID Periode: "))
+            kode_transaksi = input("Kode Transaksi: ")
+            tanggal_transaksi = input("Tanggal Transaksi: ")
+            id_pelaku_usaha = int(input("ID Pelaku Usaha: "))
+            beli_dari_pelaku_usaha = int(input("Beli dari Pelaku Usaha: "))
+            jumlah_karbon_masuk = float(input("Jumlah Karbon Masuk: "))
+            satuan_karbon_masuk = input("Satuan Karbon Masuk: ")
+            harga_beli = float(input("Harga Beli: "))
+            nilai_beli_karbon = float(input("Nilai Beli Karbon: "))
+            satuan_harga = input("Satuan Harga: ")
+            jual_ke = int(input("Jual ke: "))
+            jumlah_karbon_keluar = float(input("Jumlah Karbon Keluar: "))
+            satuan_karbon_keluar = input("Satuan Karbon Keluar: ")
+            harga_jual = float(input("Harga Jual: "))
+            satuan_harga_jual = input("Satuan Harga Jual: ")
+            nilai_jual_karbon = float(input("Nilai Jual Karbon: "))
+            token = input("Token: ")
+            saldo_emisi = float(input("Saldo Emisi: "))
+            satuan_saldo = input("Satuan Saldo: ")
+            saldo_nilai_ekonomi = float(input("Saldo Nilai Ekonomi: "))
+            satuan_mata_uang = input("Satuan Mata Uang: ")
+            token_expired = input("Token Expired: ")
+            approval_status = input("Approval Status: ")
+            approved_by = input("Approved By: ")
+            approved_at = input("Approved At: ")
+            created_by = input("Created By: ")
+            created_at = input("Created At: ")
+            modified_by = input("Modified By: ")
+            is_deleted = input("Is Deleted: ")
+            file = input("File: ")
+            id_penawaran = int(input("ID Penawaran: "))
+            id_permintaan = int(input("ID Permintaan: "))
+            id_transaksi_origin = int(input("ID Transaksi Origin: "))
+            is_spe = input("Is SPE: ")
+            is_direct_offset = input("Is Direct Offset: ")
 
-    # Menambahkan blok baru dengan data transaksi
-    blockchain.add_transaksi(transaksi)
+            # Membuat objek Transaksi berdasarkan input pengguna
+            transaksi = Transaksi(
+                id=id_transaksi,
+                id_periode=id_periode,
+                kode_transaksi=kode_transaksi,
+                tanggal_transaksi=tanggal_transaksi,
+                id_pelaku_usaha=id_pelaku_usaha,
+                beli_dari_pelaku_usaha=beli_dari_pelaku_usaha,
+                jumlah_karbon_masuk=jumlah_karbon_masuk,
+                satuan_karbon_masuk=satuan_karbon_masuk,
+                harga_beli=harga_beli,
+                nilai_beli_karbon=nilai_beli_karbon,
+                satuan_harga=satuan_harga,
+                jual_ke=jual_ke,
+                jumlah_karbon_keluar=jumlah_karbon_keluar,
+                satuan_karbon_keluar=satuan_karbon_keluar,
+                harga_jual=harga_jual,
+                satuan_harga_jual=satuan_harga_jual,
+                nilai_jual_karbon=nilai_jual_karbon,
+                token=token,
+                saldo_emisi=saldo_emisi,
+                satuan_saldo=satuan_saldo,
+                saldo_nilai_ekonomi=saldo_nilai_ekonomi,
+                satuan_mata_uang=satuan_mata_uang,
+                token_expired=token_expired,
+                approval_status=approval_status,
+                approved_by=approved_by,
+                approved_at=approved_at,
+                created_by=created_by,
+                created_at=created_at,
+                modified_by=modified_by,
+                is_deleted=is_deleted,
+                file=file,
+                id_penawaran=id_penawaran,
+                id_permintaan=id_permintaan,
+                id_transaksi_origin=id_transaksi_origin,
+                is_spe=is_spe,
+                is_direct_offset=is_direct_offset
+            )
 
-    # Cetak blockchain
+            # Menambahkan blok baru dengan data transaksi
+            blockchain.add_transaksi(transaksi)
+
+
+        elif choice == "4":
+           # Menampilkan seluruh blockchain
+            print("\nBlockchain:")
+            print(blockchain.to_dict())
+
+
+        elif choice == "5":
+            # Keluar dari program
+            break
+
+        else:
+            print("Pilihan tidak valid. Silakan masukkan nomor aktivitas yang benar.")
+        
+    # Cetak blockchain setelah keluar dari loop
     print("\nBlockchain:")
     print(blockchain.to_dict())
 
