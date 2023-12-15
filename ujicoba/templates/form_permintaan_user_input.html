@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Permintaan Form</title>
+</head>
+<body>
+    <h1>Add Permintaan</h1>
+    <form method="post" action="/add_permintaan_user_input">
+        <label for="id_pelaku_usaha">ID Pelaku Usaha:</label>
+        <input type="text" name="id_pelaku_usaha" required><br>
+
+        <label for="id_periode">ID Periode:</label>
+        <input type="text" name="id_periode" required><br>
+
+        <label for="tanggal_permintaan">Tanggal Permintaan (YYYY-MM-DD):</label>
+        <input type="text" name="tanggal_permintaan" required><br>
+
+        <label for="tanggal_awal_berlaku">Tanggal Awal Berlaku (YYYY-MM-DD):</label>
+        <input type="text" name="tanggal_awal_berlaku" required><br>
+
+        <label for="tanggal_akhir_berlaku">Tanggal Akhir Berlaku (YYYY-MM-DD):</label>
+        <input type="text" name="tanggal_akhir_berlaku" required><br>
+
+        <label for="ptbae_diminta">Jumlah PTBAE yang Diminta:</label>
+        <input type="text" name="ptbae_diminta" required><br>
+
+        <label for="satuan">Satuan PTBAE:</label>
+        <input type="text" name="satuan" required><br>
+
+        <label for="harga">Harga PTBAE yang Diminta:</label>
+        <input type="text" name="harga" required><br>
+
+        <label for="mata_uang">Mata Uang:</label>
+        <input type="text" name="mata_uang" required><br>
+
+        <label for="jumlah_terbeli">Jumlah yang Terbeli:</label>
+        <input type="text" name="jumlah_terbeli" required><br>
+
+        <label for="satuan_terbeli">Satuan PTBAE Terbeli:</label>
+        <input type="text" name="satuan_terbeli" required><br>
+
+        <label for="sisa_permintaan">Sisa Permintaan:</label>
+        <input type="text" name="sisa_permintaan" required><br>
+
+        <label for="satuan_sisa_permintaan">Satuan Sisa Permintaan:</label>
+        <input type="text" name="satuan_sisa_permintaan" required><br>
+
+        <label for="tanggal_terbeli">Tanggal PTBAE Terbeli (YYYY-MM-DD):</label>
+        <input type="text" name="tanggal_terbeli" required><br>
+
+        <label for="created_by">Pembuat Permintaan:</label>
+        <input type="text" name="created_by" required><br>
+
+        <label for="created_at">Waktu Dibuat (YYYY-MM-DD HH:MM:SS):</label>
+        <input type="text" name="created_at" required><br>
+
+        <label for="last_modified_by">Modified By:</label>
+        <input type="text" name="last_modified_by" required><br>
+
+        <label for="last_modified_at">Modified At (YYYY-MM-DD HH:MM:SS):</label>
+        <input type="text" name="last_modified_at" required><br>
+
+        <label for="is_deleted">Hapus Transaksi (Y/N):</label>
+        <input type="text" name="is_deleted" required><br>
+
+        <label for="status">Status Permintaan:</label>
+        <input type="text" name="status" required><br>
+
+        <label for="available_permintaan">Permintaan Tersedia:</label>
+        <input type="text" name="available_permintaan" required><br>
+
+        <label for="is_spe">Is_Spe (Y/N):</label>
+        <input type="text" name="is_spe" required><br>
+
+        <label for="is_direct_offset">Is Direct Offset (Y/N):</label>
+        <input type="text" name="is_direct_offset" required><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

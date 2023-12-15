@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Transaksi</title>
+</head>
+<body>
+    <h1>Formulir Transaksi</h1>
+    <form method="POST" action="/add_transaksi_user_input">
+        <label for="id_periode">ID Periode:</label>
+        <input type="text" name="id_periode" required>
+
+        <label for="kode_transaksi">Kode Transaksi:</label>
+        <input type="text" name="kode_transaksi" required>
+
+        <label for="tanggal_transaksi">Tanggal Transaksi (YYYY-MM-DD):</label>
+        <input type="text" name="tanggal_transaksi" required>
+
+        <label for="id_pelaku_usaha">ID Pelaku Usaha:</label>
+        <input type="text" name="id_pelaku_usaha" required>
+
+        <label for="beli_dari_pelaku_usaha">Beli dari Pelaku Usaha (Y/N):</label>
+        <input type="text" name="beli_dari_pelaku_usaha" required>
+
+        <label for="jumlah_karbon_masuk">Jumlah Karbon Masuk:</label>
+        <input type="number" name="jumlah_karbon_masuk" required>
+
+        <label for="satuan_karbon_masuk">Satuan Karbon Masuk:</label>
+        <input type="text" name="satuan_karbon_masuk" required>
+
+        <label for="harga_beli">Harga Beli:</label>
+        <input type="number" name="harga_beli" required>
+
+        <label for="nilai_beli_karbon">Nilai Beli Karbon:</label>
+        <input type="number" name="nilai_beli_karbon" required>
+
+        <label for="satuan_harga">Satuan Harga:</label>
+        <input type="text" name="satuan_harga" required>
+
+        <label for="jual_ke">Jual ke:</label>
+        <input type="text" name="jual_ke" required>
+
+        <label for="jumlah_karbon_keluar">Jumlah Karbon Keluar:</label>
+        <input type="number" name="jumlah_karbon_keluar" required>
+
+        <label for="satuan_karbon_keluar">Satuan Karbon Keluar:</label>
+        <input type="text" name="satuan_karbon_keluar" required>
+
+        <label for="harga_jual">Harga Jual:</label>
+        <input type="number" name="harga_jual" required>
+
+        <label for="satuan_harga_jual">Satuan Harga Jual:</label>
+        <input type="text" name="satuan_harga_jual" required>
+
+        <label for="nilai_jual_karbon">Nilai Jual Karbon:</label>
+        <input type="number" name="nilai_jual_karbon" required>
+
+        <label for="token">Token:</label>
+        <input type="text" name="token" required>
+
+        <label for="saldo_emisi">Saldo Emisi:</label>
+        <input type="number" name="saldo_emisi" required>
+
+        <label for="satuan_saldo">Satuan Saldo:</label>
+        <input type="text" name="satuan_saldo" required>
+
+        <label for="saldo_nilai_ekonomi">Saldo Nilai Ekonomi:</label>
+        <input type="number" name="saldo_nilai_ekonomi" required>
+
+        <label for="satuan_mata_uang">Satuan Mata Uang:</label>
+        <input type="text" name="satuan_mata_uang" required>
+
+        <label for="token_expired">Token Expired (Y/N):</label>
+        <input type="text" name="token_expired" required>
+
+        <label for="approval_status">Approval Status:</label>
+        <input type="text" name="approval_status" required>
+
+        <label for="approved_by">Approved By:</label>
+        <input type="text" name="approved_by" required>
+
+        <label for="approved_at">Approved At (YYYY-MM-DD HH:MM:SS):</label>
+        <input type="text" name="approved_at" required>
+
+        <label for="created_by">Created By:</label>
+        <input type="text" name="created_by" required>
+
+        <label for="created_at">Created At (YYYY-MM-DD HH:MM:SS):</label>
+        <input type="text" name="created_at" required>
+
+        <label for="modified_by">Modified By:</label>
+        <input type="text" name="modified_by" required>
+
+        <label for="is_deleted">Is Deleted (Y/N):</label>
+        <input type="text" name="is_deleted" required>
+
+        <label for="file">File:</label>
+        <input type="text" name="file" required>
+
+        <label for="id_penawaran">ID Penawaran:</label>
+        <input type="text" name="id_penawaran" required>
+
+        <label for="id_permintaan">ID Permintaan:</label>
+        <input type="text" name="id_permintaan" required>
+
+        <label for="id_transaksi_origin">ID Transaksi Origin:</label>
+        <input type="text" name="id_transaksi_origin" required>
+
+        <label for="is_spe">Is SPE (Y/N):</label>
+        <input type="text" name="is_spe" required>
+
+        <label for="is_direct_offset">Is Direct Offset (Y/N):</label>
+        <input type="text" name="is_direct_offset" required>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
